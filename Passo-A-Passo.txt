@@ -1,0 +1,23 @@
+Comando para decorar:
+	git init = Esse comando serve para inicializar seu bash.
+	
+Como atualizar o git:
+	git status = arquivos foram adicionado ou não, e se o arquivo foi atualizado.
+
+
+Como adicionar o git:
+	git add "nome completo do arquivo".
+
+
+Como adicionar mais de um arquivo no git de uma vez só:
+	git add .
+
+Para configurar o git:
+	git config --global user.email
+	git config --golval user.name
+
+Para ligar repositório local com o remoto:
+	git remote add origin + SSH
+	git remote -v;
+	git push -u origin master
+-> git@github.com:PabloZalem/TestApiComSwagger.git
