@@ -92,7 +92,20 @@ Git merge  - Como unir códigos:
 	git branch:
 	git checkout master;
 	git merge stating 
-		Você estará puxando de um código atualizado para sua master.	
+		Você estará puxando de um código atualizado para sua master.
+	git pull
+		Vai trazer atualizaçãoes;
+	git merge stating.
+	Ciclo: 
+- git pull da branch principal;
+- gerar uma nova branch à partir da branch principal;
+- Trabalhar e adicionar novas funcionalidades da nova branch que criou.
+- Finalizou o trabalho na branch temporária;
+- Git checkout na branch principal;
+- Git pull;
+- Mergiar (unir) o código da branch temporária com a branch principal (depois de tester)	
+- Git Push da branch principal.
+
 
 ***Como alterar o repositório
 	git remote remove github + nome do repositorio.
