@@ -76,7 +76,23 @@ O que são branchs e como criar uma:
 	Para saber qual branch que estamos usando, é ver se está verde e tem asterisco.
 	Para mudar de branch:
 	git checkout staging.
-		
+	Teremos um passo a passo:
+- git status
+- git add .
+- git status
+- git commit -m ""
+- git push, aqui se atentar pois, com estamos em uma nova branch, nesse caso na stating, ele dará um novo comando: 
+	 git push --set-upstream origin stating
+	Dando enter e formos vermos as alterações, veremos que temos três branchs.
+	Você continua a capacidade de versionar o código e não terá o risco de ter um problema com o código principal.
+
+
+
+Git merge  - Como unir códigos:
+	git branch:
+	git checkout master;
+	git merge stating 
+		Você estará puxando de um código atualizado para sua master.	
 
 ***Como alterar o repositório
 	git remote remove github + nome do repositorio.
