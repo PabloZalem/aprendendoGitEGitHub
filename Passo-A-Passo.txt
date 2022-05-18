@@ -1,16 +1,21 @@
 Comando para decorar:
 	git init = Esse comando serve para inicializar seu bash.
+
+
 	
 Como atualizar o git:
 	git status = arquivos foram adicionado ou não, e se o arquivo foi atualizado.
+
 
 
 Como adicionar o git:
 	git add "nome completo do arquivo" entre aspas duplas.
 
 
+
 Como adicionar mais de um arquivo no git de uma vez só:
 	git add .
+
 
 
 Como criar versões do código com commit:
@@ -21,6 +26,7 @@ Para configurar o git:
 	git config --golval user.name
 
 
+
 Como enviar alterações usando git Push:
 	Cria-se um repositório no GitHub, pegue aque linke e use-o para linkar com o git.
 
@@ -28,17 +34,97 @@ Para ligar repositório local com o remoto:
 	git remote add origin + SSH
 	git remote -v;
 	git push -u origin master
--> git@github.com:PabloZalem/TestApiComSwagger.git
+->
+git@github.com:PabloZalem/TestApiComSwagger.git
 
 	git push --set-upstream origin master = Isso quer dizer que ainda não definimos para qual branch nós estamos enviando.
 	Isso tudo mostra que o nosso projeto foi adicionado.
 	
 
 Ciclo de atualização de código:
+	git status = Para saber se tem alguma alteração;
+	git add . = Para adicionar essas alterações;
+	git status = Para saber se está tudo certo;
+	git commit -m "O que está sendo commitado";
+	git status;
+	git push: Esse comando é para mandar a atualização para minha Branch Master.
 	
 
 
+Como verificar o histórico de atualização:
+	git reflog:  A versão mais atual é a que fica no topo.
+	
 
+
+Como Navegar entre versões do seu código:	
+	git reset --hard 2a63261:
+Ele volta para a versão raiz. 	
+	Esse número seria o id.
+	Ele ira resetar para versão mais antiga;
+	Caso queira voltar, apenas fazer um git reflog que voltará normalmente.
+	Ao criar commits, você está criando cópias do seu código uma forma de lidar com isso.
+	
+
+
+O que são branchs e como criar uma:
+	Branch significa galho: mas trazendo para o contexto são caminhos difentes no processo de desenvolvimento.
+	Tem uma Branch principal que toda a alteração que tivermos mandaremos para lá.
+	Cada versão é uma atualização.
+	Para criar uma nova branch:
+	git branch stating;
+	Geralmente esse nome é nome dado que recebe atualizações.
+	Para saber qual branch que estamos usando, é ver se está verde e tem asterisco.
+	Para mudar de branch:
+	git checkout staging.
+	Teremos um passo a passo:
+- git status
+- git add .
+- git status
+- git commit -m ""
+- git push, aqui se atentar pois, com estamos em uma nova branch, nesse caso na stating, ele dará um novo comando: 
+	 git push --set-upstream origin stating
+	Dando enter e formos vermos as alterações, veremos que temos três branchs.
+	Você continua a capacidade de versionar o código e não terá o risco de ter um problema com o código principal.
+
+
+
+Git merge  - Como unir códigos:
+	git branch:
+	git checkout master;
+	git merge stating 
+		Você estará puxando de um código atualizado para sua master.
+	git pull
+		Vai trazer atualizaçãoes;
+	git merge stating.
+	Ciclo: 
+- git pull da branch principal;
+- gerar uma nova branch à partir da branch principal;
+- Trabalhar e adicionar novas funcionalidades da nova branch que criou.
+- Finalizou o trabalho na branch temporária;
+- Git checkout na branch principal;
+- Git pull;
+- Mergiar (unir) o código da branch temporária com a branch principal (depois de tester)	
+- Git Push da branch principal.
+
+	Exemplo:
+- git pull;
+- git checkout -b sistema-de-login master	
+	Criado uma nova branch, baseada na branch master;
+- git add .
+- git status;
+- git commit -m "atualizar";
+- git checkout master;
+- git pull
+	Essa parte é importante pois, antes de fazer um merge é necessário trazer as atualizações para branch master, caso contrário, você quebrará o código.
+- git merge sistema-de-login;
+	você vai puxar;
+- git push
+	para mandar pra principal.
+
+
+
+Pull Request - Um merge democrático.
+	
 
 ***Como alterar o repositório
 	git remote remove github + nome do repositorio.
