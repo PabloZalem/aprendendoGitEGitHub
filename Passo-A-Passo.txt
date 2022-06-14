@@ -124,7 +124,46 @@ Git merge  - Como unir códigos:
 
 
 Pull Request - Um merge democrático.
+	Você só vai unir com o principal, caso alguém aprove fazendo um pull request.
+	Ex.:
+- git checkout sistema-de-login
+- git add.
+- git status;
+- git commit -m "";
+- git push --set--upstream origin sistema-de-login
+	Enviando para nuvem;
+	Indo até ao gitHub:
+- Compare & pull request:
+	Escolher a base : master <- comapare: stating;
+- Merge pull request;
+- Confirm merge;
+
+
+
+GitIgnore:
+	touchs .gitignore
+	Dentro dele será definido qual pasta não pode ser tocado.
+	Ao dar um git status, ele msotrará um git ignore.
+	Colocar o caminho dele dentro do ignore.
+	O git ignore = ele controla o que será adicionado ou não.
+- git status;
+- git commit -m " ";
+- git push;
+
+
 	
+Considerações finais:
+- git init = inicializada um novo repositório;
+- git add . = adicionar o arquivos atuais ao proximo commit;
+- git status = verificar o status atual do reposit´roio git;
+- git commit -m "mensagem de texto" = cria um novo commit com uma mensagem;
+- git push = envia as atualizaçãoes para a nuvem na branch atualmente ativa;
+- git branch = permite listar e ver qual branch está ativa atualmente;
+- git checkout nome-da-branch = permite mudar para uma nova branch;
+- git checkout -b "noem da branch de origem" "nome da nova branch" = permite mudar e criar uma nova branch com base em outra;
+- git merge "branch a receber merge" = permite fazer merge da branch ativa atualmente com outra branch;
+- git pull = atualiza a branch atualmente ativa.
+
 
 ***Como alterar o repositório
 	git remote remove github + nome do repositorio.
@@ -161,4 +200,63 @@ git remote remove origin
 git log: 
 	Esse comando é para saber do histórico.
 
+	
+
+
+REVIEW:
+	Repositórios: Aonde eu deixo meus projetos;
+	Versionamento: Controlar versões do meu código;
+	git --version = para saber a versão
+
+
+Configurando sua identificação no GitHub:
+- git config --global user.name "Seu nome"
+- git config --global.email "Seu email de cadastro no GitHub"
+- git config --list
+
+
+
+Confiurando para ver arquivos OCULTOS:
+	Iniciar -> Opções do explorador de arquivos.
+	Desmarcar: "Ocultar as extensões dos tipos de arquivos conhecidos"
+	Marcar: "Mostar arquivos, pastas e unidades ocultas".
+
+
+
+Como configurar chave SSH para o GitHub:
+	SSH é um protocolo para comunicação de dados com segurança.
+	O GitHub aboliu a autenticação somente com o usuário e senha.
+	A ideia básica é cadastrar previamente quais computadores podem acessar o GitHub em seu nome.
+	Outros computadores podem acessar.
+1 - Gerar uma chave SSH no seu computador;
+2- Cadastrar essa chave no seu GitHub.
+	No git você gerará esse comando:
+	ssh-keygen -t rsa -b 4096 -C "zalem.pablo@yahoo.com"
+	Settings;
+	SSH and GPS keys;
+	SSH keys = New SSH key.
+	
+
+
+Passo a Passo: Salvar primeira versão de um projeto no GitHub:
+	Considerando que agora seu ambiente já está todo configurado (usuário, visualização de arquivos ocultos, chaves SSH), sempre que você criar um novo projeto, os passos básicos serão estes (troque os parâmetros em azul pelos seus dados):
+git init = inicializar;
+git add . = adicionar as alterações;
+git status
+git commit -m "Mensagem explicativa"
+git status
+git branch -M main;
+git remote add origin git@github.com
+	seuusuario/seurepositorio.git
+git push u- origin main.
+	Está associado com o gitHub;
+git push -u origin main;
+
+
+
+Passo a Passo:  salvar uma nova versão:
+git status;
+git add . 
+git commit -m "Mensagem explicativa"
+git push
 	

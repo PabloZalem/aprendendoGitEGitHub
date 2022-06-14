@@ -1,0 +1,197 @@
+O QUE É O GIT?
+	O GIT é um sistema open source de controle de versão mais popular da internet.	
+	Ele é um SISTEMA DISTRIBUÍDO OPENSOURCE DE CONTROLE DE VERSÕES.
+	Open Source: Significa que ele é um software livre.
+	Controle de versões: é a mesma coisa que dizer que ele armazena contreúdo e mantém um histórico das alterações feitas nele (seja por um usuário só ou muitos);
+	Sistema distribuído significa que cada diretório de trabalho do git é um repositório com um histórico completo e habilidade total de acompanhamento das revisões.
+	
+COMO COMEÇAR COM COMANDO GIT:
+-> git config --global -e
+
+INFORMAÇÕES DOS COMANDOS GIT:
+-> git status
+
+OS COMMITS:
+-> git commit -m "Atualizar o que foi feito";
+-> git add . Adiciona tudo
+-> git add [nome do arquivo]
+-> c = !git add --all && git commit -m
+
+GIT INIT: Esse comando cria um repositório vazio ou transforma uma pasta que você já tem, e que não está com controle de versão, em um repositório.
+-> git init;
+
+GIT CLONE: O Git clone é um comando para baixar o código-fonte existente de um repositório remoto (como o Github, por exemplo).
+-> git clone <https://url-do-link>
+	Quando você clonar um repositório, o código é copiado para a o seu computador e continua linkado ao original, como foi explicado lá na descrição do que é um sistema distribuído.
+	Caso queira desvincular a sua cópia original, rodar o comado:
+-> git remote rm origin
+
+GIT BRANCH: Com branches (ou ramificações).
+	Por isso, esse é um dos comandos Git mais importantes. Pode-se usar o comando git branch para criar, listar e excluir branches.
+Criando uma nova branch:
+-> git branch <nome-da-branch>
+
+criando uma branch local. Para upar a nova branch para o repositório remoto, usa-se:
+-> git push -u <remote> <nome-da-branch>
+	
+para ver as ramificações:
+-> git branch ou git branch --list;
+
+deletando uma branch:
+-> git branch -d <nome-da-branch>
+	
+
+GIT CHECKOUT: Para trabalhar em uma branch, primeiro você precisa mudar para ela.
+	Não ir para a branch que você acabou de criar e na qual quer trabalhar é um erro bastante comum no começo.
+	Usa-se o git checkout para mudar de uma branch para o outro.
+-> git checkout <nome-da-ramificação>
+
+	Usa um comando de atalho que permite criar e ir pra um branch de uma vez só:
+-> git checkout -b <nome-da-branch>
+
+
+GIT STATUS:
+	O comando status do git fornece algumas informações sobre a branch em que estiver no momento, como seu nome, se ela está atualizada em relação à master e quais arquivos foram alterados.
+-> git status.
+
+
+GIT ADD: 
+	Quando criamos, modificamos ou excluímos um arquivo, essas alterações ocorrerão em nosso ambiente local e não serão incluídas no próximo commit (a menos que alteremos as configurações).
+Para adicionar apenas um arquiv:
+-> git add <arquivo>
+
+Para adicionar, de uma vez, todos os arquivos modificados:
+-> git add -A
+***O comando git add não altera o repositório e as alterações não são salvas até usarmos o git commit.
+
+
+GIT COMMIT: 
+	Este comando é como definir um ponto de verificação no processo de desenvolvimento, para o qual você pode voltar mais tarde, se necessário.
+-> git commit -m "mensagem explicando a mudança no código"
+
+
+GIT PUSH: 
+	Após confirmar as alterações, a próxima coisa que você deseja fazer é enviar as alterações para o servidor remoto.
+	O comando git push envia e salva suas confirmações no repositório remoto.
+-> git push <remote> <nome-do-branch>
+
+Se sua branch for criado recentemente, você também precisará fazer upoad do branch com o seguinte comando.
+-> git push -u origin <nome-do-branch>
+
+
+GIT PULL:
+	O comando git pull é usado para obter atualizações do repositório remoto.
+	O comando de pull depende do referencial de onde ele foi feito, ou seja, um git pull feito da sua máquina vai puxar informações do repositório original para ela.
+	Este comando é uma combinação de git fetch (baixa as alterações do repositório remoto mas não mescla elas com o seu) e git merge (que mescla tudo junto), o que significa que, quando usamos o git pull, ele recebe as atualizações do repositório remoto (git fetch) e aplica imediatamente as alterações mais recentes no seu local (git merge).
+-> git pull <remote>
+
+
+GIT REVERT:
+	Existem várias maneiras de desfazer nossas alterações local ou remotamente (dependendo da necessidade), mas devemos usar esses comandos com cuidado para evitar problemas.
+	Uma maneira segura de desfazer os commits é usando git revert.
+-> git revert 'número do hash'
+
+O numero do hash pode ser conseguido pelo comando:
+-> git log --oneline
+
+
+GIT MERGE: 
+	Quando você conclui o desenvolvimento em sua branch e tudo funciona bem, sem conflitos, a etapa final é mesclar as branches, isso é feito com o comando git merge.
+	Como falamos no tópico sobre git pull, esse comando vai mesclar, no seu repositório local, todas as alterações feitas.
+-> git merge <nome-da-branch>
+
+
+O CICLO DE VIDA:
+	Segue-se uma sequência:
+1- pull;
+2- modifica;
+3- commit;
+4- push.
+
+ESTADOS DOS ARQUIVOS NO GIT:
+	Estados dos arquivos do git:
+1- untracked: adiciona o arquivo
+2- unmodified: remove o arquivo;
+3- modified: editar o arquivo;
+4- staged: estágio o arquivo;
+	staged -> unmodified : commit
+
+1. UNTRACKED:
+	Arquivos marcados como untracked são arquivos não monitorados pelo Git.
+	Os arquivos que são criados tem esse estado.
+
+- Arquivos não monitorados: (utilize git add <arquivo> para incluir o que será submetido)
+-> git add . 
+
+	Para que o Git comece a versionar o arquivo precisamos mudá-lo para stage.
+	Note que o Git sempre vai te dar a dica do que fazer quando executar o git status:
+-> git add .
+-> git status
+No ramo master.
+Subimissão inicial. 
+
+Mudanças a serem submetidas:
+(utilize “git rm –cached <arquivo>…” para não apresentar)
+	O estado do arquivo mudou. O git já o reconhece e ele está pronto para ser salvo.
+
+STAGE:
+	Os arquivos marcados como stage são os arquivos novos ou modificados que serão salvos no próximo commit.
+	O que o comando anterior git add faz é adicionar os arquivos de untracked e modified para stage.
+	
+Precisamos agora dar o comando git commit para salvar a nova versão do repositório:
+-> git commit -m "Meu primeiro commit"
+
+
+UNMODIFIED:
+	Quando realizamos um commit, os arquivos saem de stage para unmodified, isso significa que, na linha do tempo, seu arquivo está igual ao estado salvo no último commit.
+	No commit, salvamos o estado do repositório e o Git passa a informar das mudanças do último commit (HEAD) em diante.
+-> git status
+
+
+MODIFIED:
+	São os arquivos já montados pelo git que sofreram alguma alteração desde o último commit: 
+-> git status
+
+
+CHANGES NOT STAGE FOR COMMIT:
+	(utilize “git add <arquivo>…” para atualizar o que será submetido)
+	(utilize “git checkout — <arquivo>…” para descartar mudanças no diretório de trabalho)
+	Se quisermos salvar a alteração, basta mudar o arquivo para a área de stage com o comando git add e depois git commit para gerar a nova versão com as mudanças:
+-> git add .
+-> git status 
+
+
+MUDANÇAS A SEREM SUBMETIDAS:
+	(use “git reset HEAD <file>…” to unstage)
+-> git commit -m ‘Nova mudança’
+
+
+DESFAZENDO AS COISA:
+	Seguindo na ordem anterior, para desfazer um arquivo untracked você precisa apenas remover o arquivo. 
+	Como ele ainda não foi adicionado no Git, caso seja removido ele não sentirá falta.
+	Depois, caso tenha adicionado o arquivo novo em stage e queira remover ele de lá, basta utilizar o comando git reset HEAD <filename>.
+	Este comando retornará o arquivo de stage para untracked (caso seja um arquivo novo) ou modified (caso seja um arquivo que já existia mas foi modificado).
+-> git add
+-> git status
+
+
+MUDANÇAS A SEREM SUBMETIDAS:
+	(use “git reset HEAD <file>…” to unstage)
+-> git reset HEAD
+	Unstaged changes after reset:
+-> git status.
+	
+
+Changes not staged for commit:
+	(utilize “git add <arquivo>…” para atualizar o que será submetido)
+	(utilize “git checkout — <arquivo>…” para descartar mudanças no diretório de trabalho)
+	Se observarmos, no último git status já temos uma dica do Git como retornar arquivos de modified para unmodified: git checkout <filename>:
+	No ramo master, nada de submetere, diretório de trabalho vazio.
+	Esse comando retornará o arquivo para a versão do último commit.
+	Cuidado com ele, você pode perder todo o trabalho realizado.
+	Por último, mas não menos importante, podemos também remover ou desfazer os commits, mantendo ou não o histórico do que já foi feito.
+	Para remover o commit faça:
+-> git reset HEAD~1
+
+	
+	
