@@ -260,3 +260,5 @@ git add .
 git commit -m "Mensagem explicativa"
 git push
 	
+
+SHA256:HIyQ4Vfs/q5fxqfOuTcBUGJKQsXtvoP1r4y/ZlhL7Zg zalem.pablo@yahoo.com

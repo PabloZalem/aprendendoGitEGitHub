@@ -29,4 +29,14 @@ GIT CLONE E LOG:
 
 GIT STATUS, GIT COMMIT e  GIT PUSH.
 	Precisamos deixar tudo sincronizados.
-	
+	O comando para puxar se houve alguma atualização na nossa branch é o git pull.
+	git status ele mostra se houve alguma alteração, para podermos fazer comando para manipularmos as coisa.
+	git commit -m "mostrar as alterações";
+	 git commit (nome da pasta) -m "";
+	git push para subir para a máquina.
+	O COMANDO GIT PUSH: Esse comando git push é usado quando você deseja enviar as alterções realizadas no seu repositório local para um repositório.
+	Segue esse sequencial, geralmente:
+git add .
+git commit -m "mensagem de commit"
+git push origin main
+	Que o push vai subir de um repositório local para um remoto.
