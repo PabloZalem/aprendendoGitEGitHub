@@ -1,0 +1,21 @@
+Arquivos que está no meu diretório;
+	Ao fazer algumas alteração, como fazer um git status.
+	Ao fazer um git add ., ele automaticamente muda para o STAGING (confirmação de alteração).
+	Em seguida, fazemos um git commit -m "alteração que fizemos", ele fará um commit para o meu REPOSITORIO LOCAL.
+	Para que ele vá para o servidor do GitLab, usa-se o comando do git push;
+	Ao rodar o comando git pull iremos sincronizar as alterações que estão no repositório remoto, ou seja que estão no gitLab cm o seu repositório local.
+	 
+-> git init: Ele cria um repositório git dentro do repositório, dentro da pasta que eu tô no momento.
+-> git add . : todos esses arquivos vão para area de staging;
+-> git status: Não tem um commit, ainda, mas podem ser commitado.
+-> git commit -m "nome do que fez": Nesse momento, os arquivos vão para o repositório.
+-> git log: Os históricos de commit.
+
++ criar uma nova branch:
+-> git branch nome-da-brach;
+-> git checkout nome-da-branch:
+	Eu entro na nova branch.
+-> git checkout master;
+-> git merge nome-da-branch: Para juntarmos o que tem em outra branch(nome-da-branch) e colocar na branch onde estamos.	
+-> git remote -v: Para ver se tem algum repositório cadastrado aqui.
+-> git remode add origin URL: Adicionar a url como origem.

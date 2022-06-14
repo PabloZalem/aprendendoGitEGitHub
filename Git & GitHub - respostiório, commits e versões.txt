@@ -40,3 +40,8 @@ git add .
 git commit -m "mensagem de commit"
 git push origin main
 	Que o push vai subir de um repositório local para um remoto.
+ 
+git restore = Esse comando ele volta para algum momento da nossa aplicação.
+	Porém precisamos passar o hash que queremos voltar, ou seja.
+-> git retore --source a0c893b
+-> git log --oneline = Usando esse comando ele mostra como está a situação das mudanças daquele momento.	

@@ -194,4 +194,12 @@ Changes not staged for commit:
 -> git reset HEAD~1
 
 	
-	
+-> git status = verificar se existem alterações
+-> git log = ver os commits da branch atual
+-> git add . = colocar as alterações locais na área de staging
+-> git checkout nome_da_branch = muda de branch
+-> git branch = lista as branches locais
+-> git branch nome_da_branch = cria uma nova branch
+-> git checkout -b nome_da_branch = cria uma nova branch e muda pra ela
+-> git commit -m "o que foi feito no commit" = Cria um commit com uma mensagem
+-> git merge segunda_branch = faz o merge da segunda_branch com a branch atual
