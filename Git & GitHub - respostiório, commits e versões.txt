@@ -1,0 +1,47 @@
+GitHub:  É um controlador de versionamento dos códigos.
+	Conversar de maneira única com o mesmo código.
+	
+Para que serve o GitHub?
+	É utilizado o GitHub, pois ele serve para unificar as mudanças de toda a equipe em um único local, denominado repositório.
+	
+README:
+	Esse arquivo significa literalmte LEIAME, e contém as instruções que geralmente são para você saber como fazer a intalação do software.
+	No GithHub, o README é um arquivo com extensão .md (Markdown) que contém as informações necessárias para enteder o OBJETIVO e STATUS de seu projeto.
+	O MARKDOWN é uma linguagem de marcação de texto, assim como o HTML, só que mais simples.
+	Por que precisamos de um README no repositório do meu projeto?
+	No README, você pode dar uma descrição sobre o que é o seu projeto, qual o status atual dele, as tecnologias utilizadas, o time que trabalha no desenvolvimento, como contribuir (se for open source), como usar.
+	
+
+
+COMMIT:
+Realizando o COMMIT: O commit é uma ação muito importante do GIT para nos ajudar no controle da versão do nosso projeto.
+	Um commit pode ser considerador como um marco ao longo do cronograma de um projeto.
+	Nos realizamos um commit, quando estamos ADICIONANDO AS ALTERAÇÕES MAIS RECENTES DO PROJETO: Um commit guarda o estado do seu projeto naque momento.
+	Fazemos o commit antes de enviar, mas para enviar usamos o comnado git push.
+
+
+GIT CLONE E LOG:
+	GitHub é uma empresa, sua função é facilitar o uso do GIT.
+	O comando para visualizar todo o histórico é o uso do comando git log.
+	De forma resumida os log's 	que fazemos git log --oneline
+	Ao fazer um clone de um código, temos acesso a todo o histórico.
+	
+
+GIT STATUS, GIT COMMIT e  GIT PUSH.
+	Precisamos deixar tudo sincronizados.
+	O comando para puxar se houve alguma atualização na nossa branch é o git pull.
+	git status ele mostra se houve alguma alteração, para podermos fazer comando para manipularmos as coisa.
+	git commit -m "mostrar as alterações";
+	 git commit (nome da pasta) -m "";
+	git push para subir para a máquina.
+	O COMANDO GIT PUSH: Esse comando git push é usado quando você deseja enviar as alterções realizadas no seu repositório local para um repositório.
+	Segue esse sequencial, geralmente:
+git add .
+git commit -m "mensagem de commit"
+git push origin main
+	Que o push vai subir de um repositório local para um remoto.
+ 
+git restore = Esse comando ele volta para algum momento da nossa aplicação.
+	Porém precisamos passar o hash que queremos voltar, ou seja.
+-> git retore --source a0c893b
+-> git log --oneline = Usando esse comando ele mostra como está a situação das mudanças daquele momento.	
